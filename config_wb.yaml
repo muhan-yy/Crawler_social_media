@@ -1,0 +1,68 @@
+# 微博爬虫配置文件
+
+# 关键词配置
+# 关键词存放在 keywords.txt 文件中，每行一个关键词
+# 以#开头的行会被忽略
+keyword_file: "keywords.txt"  # 关键词文件路径
+
+# Cookie配置
+# Cookie存放在 cookies_wb.txt 文件中，每行一个Cookie
+# 获取方法：
+# 1. 打开浏览器，登录 https://weibo.com
+# 2. 按F12打开开发者工具
+# 3. 切换到Network标签
+# 4. 刷新页面
+# 5. 点击任意请求，在Headers中找到Cookie字段
+# 6. 复制完整的Cookie值粘贴到 cookies_wb.txt 文件中
+cookie_file: "cookies_wb.txt"  # Cookie文件路径
+
+# Cookie管理配置
+cookie_manager:
+  # 最大失败次数，超过后自动从文件中删除该Cookie
+  max_fail_count: 10
+
+# 时间配置
+time:
+  # 开始时间（格式：YYYY-MM-DD HH:MM）
+  start_date: "2024-07-01 00:00"
+  # 结束时间
+  end_date: "2024-07-01 23:59"
+  # 时间窗口固定为小时级别，无需配置
+
+# 爬虫配置
+crawler:
+  # 请求最小间隔（秒）
+  request_delay_min: 20.0
+  # 请求最大间隔（秒）
+  request_delay_max: 50.0
+  # 最大重试次数
+  max_retries: 5
+  # 请求超时时间（秒）
+  timeout: 60
+  # 并发下载线程数
+  max_workers: 3
+
+# 存储配置
+storage:
+  # 文本数据存储目录
+  text_dir: "data/text"
+  # 图片存储目录
+  image_dir: "data/images"
+  # 视频存储目录
+  video_dir: "data/videos"
+  # 日志目录
+  log_dir: "logs"
+
+# 模态数据保存配置
+# 可以选择只保存需要的模态数据，节省存储空间
+modalities:
+  # 是否保存文本数据（微博正文、作者、时间等）
+  save_text: true
+  # 是否保存图片数据
+  save_images: true
+  # 是否保存视频数据
+  save_videos: false
+  # 图片下载质量选项: "large"(高清), "mw690"(中等), "thumbnail"(缩略图)
+  image_quality: "large"
+  # 视频下载质量选项: "720p"(高清), "480p"(标清), "360p"(流畅)
+  video_quality: "480p"
