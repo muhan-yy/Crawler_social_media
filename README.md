@@ -1,11 +1,16 @@
-# WiseBillow - 微博多模态数据爬虫
+# WiseBillow - 社交媒体多模态数据爬虫
 
-微博搜索数据爬虫，支持按关键词和时间窗口爬取微博文本、图片、视频等多模态数据。
+支持按关键词和时间窗口爬取社交媒体平台文本、图片、视频等多模态数据。
+支持的社交媒体平台包括：
+- 微博：对应"crawler_wb/"
+- 抖音[TODO]
+- 小红书[TODO]
+- 快手[TODO]
 
 ## 项目结构
 
 ```
-WiseBillow/
+Crawler_social_media/
 ├── crawler_wb/                 # 爬虫核心模块
 │   ├── weibo_crawler.py        # 爬虫主程序（入口）
 │   ├── config.py               # 配置管理模块
